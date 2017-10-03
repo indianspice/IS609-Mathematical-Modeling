@@ -1,0 +1,114 @@
+---
+title: 'Week 7: Modeling using graph theory'
+author: "Sharon Morris"
+date: "10/1/2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+## Page 304: #2
+
+The bridges and land masses of a certain city can be modeled with graph G in Figure 8.7.
+
+a. Is G Eulerian? Why or why not?
+Vertex 1 = 2
+Vertex 2 = 3
+Vertex 3 = 4
+Vertex 4 = 4
+Vertex 5 = 3
+Vertex 6 = 2
+No, since not all of the degrees of the vertices are even.
+
+b. Suppose we relax the requirement of the walk so that the walker need not start and end at the same land mass but still must traverse every bridge exactly once. Is this type of walk possible in a city modeled by the graph in Figure 8.7? If so, how? If not, why not?
+
+Yes, it is possible to walk one through 2-1-3-4-4-5-3-4-6-5
+
+##Page 307: #1
+1. Consider the graph in Figure 8.11.
+a. Write down the set of edges $E(G)$.
+$ab, bc,cd, de,ef,af, df,ae, bd$
+
+b. Which edges are incident with vertex b?
+$ab, bc, bd$
+
+c. Which vertices are adjacent to vertex c?
+$b, d$
+
+d. Compute $deg(a)$.
+$(a,f), (a,e), (a,b)$
+
+e. Compute $|E(G)|$|.
+There are 9 edges
+
+##Page 320: #10
+
+A basketball coach needs to find a starting line up for her team.There are five positions that must be filled: point guard (1), shooting guard (2), swing (3), power forward (4), and center (5). Given the data in Table 8.7, create a graph model and use it to find a feasible starting lineup. 
+
+###Table 8.7Positions players can play
+\begin{tabular}{ c c c c c c c c}
+  \hline
+  Alice & Bonnie & Courtney & Deb & Ellen & Fay & Gladys & Hermione \\
+  \hline
+  1,2 & 1 & 1,2 & 3,4,5 & 2 & 1 & 3,4 & 2,3 \\
+  \hline
+\end{tabular}
+
+Below is the feasible lineup:
+
+1 Point guard - Alice
+2 Shooting guard - Courtney
+3 Swing - Hermione
+4 Power forward - Gladys
+5 Center - Deb
+
+What changes if the coach decides she can’t play Hermione in position 3?
+There is no player in the 5th place since Deb is the only player that could play the 5th position
+
+1 Point guard - Alice
+2 Shooting guard - Courtney
+3 Swing - Gladys
+4 Power forward - Deb
+
+## Page 338: #4
+Write down the linear program associated with solving maximum flow froms to in the graph in Figure 8.37.
+
+$Maximize\space z=\sum_j x_{sj}$ \newline
+
+Subject to
+$\sum_ix_y=\sum_kx_{jk}\space \forall j\in V(G)-{s,t}$ \newline 
+  $xy\le u_{ij}\space \forall ij \in A(G)$ \newline
+  $x_y\ge 0\space \forall ij\in A(G)$ \newline
+Where $x_y$ represents flow from $i\space to\space j$ \newline
+
+Constrainst of non-negative flow \newline
+$x_{ij}\ge 0\space \forall ij \in A(G)$ \newline
+$x_{sa}\ge 0$ \newline
+$x_{sb}\ge 0$ \newline
+$x_{ab}\ge 0$ \newline
+$x_{ac}\ge 0$ \newline
+$x_{bc}\ge 0$ \newline
+$x_{bd}\ge 0$ \newline
+$x_{ct}\ge 0$ \newline
+$x_{dt}\ge 0$ \newline
+$x_{cd}\ge 0$ \newline
+
+Constraints of limited flow capacity \newline
+$x_{ij}\le u_{ij}\space \forall \in A(G)$ \newline
+$x_{ij}\le 3$ \newline
+$x_{sa}\le 5$ \newline
+$x_{sb}\le 2$ \newline
+$x_{ab}\le 6$ \newline
+$x_{bc}\le 2$ \newline
+$x_{bd}\le 4$ \newline
+$x_{ct}\le 4$ \newline
+$x_{dt}\le 5$ \newline
+$x_{cd}\le 1$ \newline
+
+Constraints of flow conservation \newline
+$x_{ab}+x_{ac}=x_{sa}$ \newline
+$x_{bc}+x_{bd}=x_{sb}+x_{ab}$ \newline
+$x_{ct}+x_{cd}=x_{ac}+x_{bc}$ \newline
+        $x_{dt}=x{cd}+x_{bd}$ \newline
+        
+Maximize $z=x_{sa}+x_{sb}$
