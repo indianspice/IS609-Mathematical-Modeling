@@ -1,0 +1,85 @@
+---
+title: "Modeling with decision theory IS609-HW8"
+author: "Sharon Morris"
+date: "10/8/2017"
+output:
+  html_document: default
+  pdf_document:
+    latex_engine: xelatex
+---
+
+##Page 347:
+###Problem 4
+We have engaged in a business venture. Assume the probability of success is $P(s)=\frac{2}{5}$; further assume that if we are successful we make $\$55,000$, and if we are unsuccessful we lose $\$1,750$. Find the expected value of the business venture.
+
+The probability of failure in the business is: \newline
+$P(\bar s)=1-\frac{2}{5}$ \newline
+$=\frac {5}{5}-\frac {2}{5}\space = \frac{3}{5}$ \newline
+
+Value of the business \newline
+$E=P(s)(55000)-P(\bar s)(-1750)$ \newline
+$=(\frac{2}{5})(55000)-(\frac{3}{5})(1750)$ \newline
+$=\frac{110000}{5}-\frac{5250}{5}$ \newline
+$=22000\space - 1050$ \newline
+$=\space 20950$ \newline
+The expected balue of the business is $\$20,950$
+
+###Problem 6
+Consider a firm handling concessions for a sporting event. The firm’s manager needs to know whether to stock up with coffee or cola and is formulating policies for specific weather predictions. A local agreement restricts the firm to selling only one type of beverage. The firm estimates a $\$1,500$ profit selling cola if the weather is cold and a $\$5,000$ profit selling cola if the weather is warm. The firm also estimates a $\$4,000$ profit selling coffee if it is cold and a $\$1,000$ profit selling coffee if the weather is warm. The weather forecast says that there is a $30$ of a cold front; otherwise, the weather will be warm. Build a decision tree to assist with the decision. What should the firm handling concessions do?
+
+The profit from selling cola: 30% cold front and 70% it will be warm \newline
+$cola\space = (0.7)(5000)+(0.3)(1500)$ \newline
+$=\space 3500+450\space = 3950$ \newline
+
+The profit from selling coffee: \newline
+$coffee\space =(0.7)(1000)+(0.3)(4000)$ \newline
+$=\space 700+1200\space = 1900$ \newline
+
+The profit by selling cola is more than the expected value of profit by selling coffee
+
+## Page 355: #3
+The financial success of a ski resort in Squaw Valley is dependent on the amount of early snowfall in the fall and winter months. If the snowfall is greater than 40 inches, the resort always has a successful ski season. If the snow is between 30 and 40 inches, the resort has a moderate season, and if the snowfall is less than 30 inches, the season is poor, and the resort will lose money. The seasonal snow probabilities from the weather service are displayed in the following table with the expected revenue for the previous 10 seasons. A hotel chain has offered to lease the resort during the winter for $\$100,000$. You must decide whether to operate yourself or lease the resort. Build a decision tree to assist in the decision.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Hw8_IS609.png}
+\end{figure}
+
+E(keep) = .40 x 280000 + .20 x 100000 + .40 x (-40000) = 116000
+
+leasing will net 100,000
+
+##Page 364: #3
+A big private oil company must decide whether to drill in the Gulf of Mexico. It costs $\$1$ million to drill, and if oil is found its value is estimated at $\$6$ million. At present, the oil company believes that there is a 45% chance that oil is present. Before drilling begins, the big private oil company can hire a geologist for $\$100,000$ to obtain samples and test for oil. There is only about a 60% chance that the geologist will issue a favorable report. Given that the geologist does issue a favorable report, there is an 85% chance that there is oil. Given an unfavorable report, there is a 22% chance that there is oil. Determine what the big private oil company should do.
+
+E [geologist not hired] \newline
+$=(\$6\space million)x(0.45)$ \newline
+$= \$2.7m$ \newline
+
+Net profit of E[geologist not hire] \newline
+$=\$2.7$-(cost to drill) \newline
+$=(\$2.7-\$1)$M \newline
+$=\$1.7$ million \newline
+
+The probability of a geologists issuing favorable report is 0.6 and oil present despite favorable report is 0.85, of an unfavorable report is 0.22
+
+Probability of oil being present \newline
+$P=[(0.6)$x$(0.85)$+$(0.4)(0.22)$] \newline
+=(0.51+0.088) \newline
+=0.598 \newline
+
+E[Geologist are hired] \newline
+= ($\$6$ million) x P \newline
+= ($\$6$ million) x (0.598) \newline
+=$\$3.588$ \newline
+
+Net profit \newline
+E[geologists are hired] \newline
+=$\$3.588$ - (cost to drill + salary of geologists) \newline
+=($\$3.588$ - $\$1.1$)m \newline
+=$\$2.488$ million \newline
+
+The expected net profit for a private oil company that hire a geologist is $\$2.488$
+
+
+
+
