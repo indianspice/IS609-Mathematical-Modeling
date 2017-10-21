@@ -1,0 +1,119 @@
+---
+title: 'Week 9: Game theory  IS609'
+author: "Sharon Morris"
+date: "10/9/2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+##Page 385: #1 a, #1 c
+
+Using the definition provided for the movement diagram, determine whether the fol- lowing zero-sum games have a pure strategy Nash equilibrium. If the game does have a pure strategy Nash equilibrium, state the Nash equilibrium. Assume the row player is maximizing his payoffs which are shown in the matrices below.
+
+$$\begin{tabular}{c c c c }
+  \hline
+   & & & Colin \\
+  \hline
+   & & C1 & C2 \\
+  \hline
+   Rose & R1 & 10 & 10 \\
+   & R2 & 5 & 0 \\
+  \hline
+\end{tabular}$$
+
+Rose uses strategy R1 and R2 to maximize her payoff, Colin uses strategy C1 and C2 to minimize his loses. Rose wins only if Colin loses. Rose plays R1, Colin plays C1 or C2 for Rose to win. The value of the game is 10. This game is pure strategy and follows Nash Equilibrium.
+
+$$\begin{tabular}{c c c c }
+  \hline
+   & & & Pitcher \\
+  \hline
+   & & Fastball & Knuckleball \\
+  \hline
+  Batter & Guesses fastball & .400 & .100 \\
+   & Guesses knuclkeball & .300 & .250 \\
+  \hline
+\end{tabular}$$
+The strategy is Batter guesses a fastbass and hits it gast and expects a knuckleball and hits it. When the batter guesses a knuckleball, the pitcher throws a knuckleball for the batter to score. The value of the game is .250. This game is a strategy game and follows the Nash Equilibrium. Nash Equilibrium is an outcome where neither player can benefit by departing from the strategy associated witht he outcome.
+
+##  Page 404: #2 a
+For problems a–g build a linear programming model for each player’s decisions and solve it both geometrically and algebraically. Assume the row player is maximizing his payoffs which are shown in the matrices below.
+
+$$\begin{tabular}{c c c c }
+  \hline
+   & & & Colin \\
+  \hline
+   & & C1 & C2 \\
+  \hline
+   Rose & R1 & 10 & 10 \\
+   & R2 & 5 & 0 \\
+  \hline
+\end{tabular}$$
+
+
+Maximize Rose
+$A\le 5x+5$ \newline
+$A\le 10x$ \newline
+$x\ge0$ \newline
+$x\le1$ \newline
+
+Colin
+$A\le10x+5(1-x)$ \newline
+$=10x+5-5x$ \newline
+$A\le 5+5x$ \newline
+$A\le 10x+0(1-x)$ \newline
+$x\ge0, \space x\le1$
+
+Algebraically 
+When $5x+5=10x,\space x=1$
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{c1.png}
+\end{figure} \newpage
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{r1.png}
+\end{figure}
+
+
+Colin guesses $C1 1-y$
+
+Objective function:
+Minimize
+$A\le 10y+10(1-y)$ \newline
+$A\le 10$ \newline
+$A\le 5y + 0 (1-y)$ \newline
+$A\le 5y$ \newline
+$y\ge0$
+
+
+##  Page 420: #1
+In the following problems, use the maximin and minimax method and the movement dia- gram to determine if any pure strategy solutions exist. Assume the row player is maximizing his payoffs which are shown in the matrices below.
+
+$$\begin{tabular}{c c c c }
+  \hline
+   & & & Colin \\
+  \hline
+   & & C1 & C2 \\
+  \hline
+   Rose & R1 & 10 & 10 \\
+   & R2 & 5 & 0 \\
+  \hline
+\end{tabular}$$
+
+####Maximum Minimum
+$$\begin{tabular}{c c c c c }
+  \hline
+   & & & Colin & \\
+  \hline
+   & & C1 & C2 & Max(Row/Minimum) \\
+  \hline
+   Rose & R1 & 10 & 10 & 10 \\
+   & R2 & 5 & 0 & 0\\
+  \hline
+   Min(Column/Maximum) & 10 & 10 & \\
+\end{tabular}$$
+
+The maximum value is 10 and the minimax value is 10 -- both values are the same, the saddle point is 10. Rose's winning strategy is R1, with Colin's strategy being either C1 or C2
+
+The value 10 has no arrow directly exiting -- the position of neither play can unilaterally improve, it is an equilibrium point and follow a pure strategy.
