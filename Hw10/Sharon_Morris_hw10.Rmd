@@ -1,0 +1,102 @@
+---
+title: "Modeling with a differential equation - IS609 HW-9"
+author: "Sharon Morris"
+date: "10/20/2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Page 469: #3
+The following data were obtained for the growth of a sheep population introduced into a new environment on the island of Tasmania (adapted from J. Davidson, ‘‘On the Growth of the Sheep Population in Tasmania,’’ Trans. R. Soc. S. Australia 62(1938): 342–346).
+
+$$\begin{tabular}{ c | c c c c c c }
+    t(year) & 1814 & 1824 & 1834 & 1844 & 1854 & 1864 \\
+    \hline
+    P(t) & 125 & 275 & 830 & 1200 & 1750 & 1650 \\
+\end{tabular}$$
+
+a. Make an estimate of $M$ by graphing $P(t)$.
+
+
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+t <- c(1814, 1824, 1834, 1844, 1854, 1864)
+p <- c(125, 275, 830, 1200, 1750, 1650)
+
+ggplot(data.frame(x=t, y=p), aes(x=x, y=y), fill=p) + 
+    geom_point(color='steelblue', size=3) + 
+    geom_smooth(method = 'lm') +
+    theme_bw() +
+    xlab("t(Year)") +
+    ylab("P(t)") +
+    ggtitle("Plot of Sheep Polutlation vs Year")
+```
+The limimitling population $M\hat = 1850$ -- the values does not exceed 1750
+
+
+b. Plot ln[$P/(M-P)]$ against $t$. If a logistic curve seems reasonable, estimate $rM$
+and $t*$
+
+```{r}
+m <- 1850
+ln <- log(p/(m-p))
+
+ggplot(data.frame(x=t, y=ln), aes(x=x, y=y), fill=ln) + 
+    geom_point(color='steelblue') + 
+    geom_smooth(method = 'lm') + 
+    xlab("t(Year)") + 
+    ylab(("ln")) +
+    ggtitle("Ln against t")
+
+```
+
+The above plot shows an approximate linear relationship
+
+####Estimate $rM$ and $t*$
+
+$$ln[\frac {P}{M-P}]$$
+```{r}
+(rm <- (ln <- lm(log(p/(m-p)) ~ t)$coefficients[[2]]))
+
+```
+
+
+##  Page 478: #6
+Suggest other phenomena for which the model described in the text might be used.
+
+The equation of concentration comes out to be with initial concentration. The model can be used in the following phenomena other than medicine
+a. The model can estimate the concentration of radioactive substances used in astronomy which decays over time
+b. The model can be used to estimate the age of rocks and the life of trees and plants
+
+## Page 481: #1
+a. Using the estimate that $d_b=0.054v^2$, where $0.054$ has dimension $ft.hr^2/mi^2$, show that the constant $k$ in Equation (11.29) has the value 19.9 $ft/sec^2$.
+b. Using the data in Table 2.4, plot$d_b$ in ft versus $v^2/2$ in $ft^2$/$sec^2$ to estimate $1/k$ directly
+
+$$d_b=\frac{-v_0^2}{2k}+\frac{v_0^2}{k}=\frac{v_0^2}{2k}$$
+$d_b=0.054v^2=\frac{v^2}{2k}$
+$k=\frac{1}{2\space X\space 0.054} \approx 9.259\frac{mi^2}{ft.hr^2}$
+
+$9.259\frac{mi^2}{ft.hr^2}$ x $\frac{5280^2}{1 mi^2}$ x $\frac{1hr^2}{3600^2\space s^2}\space \approx19.918\frac{ft}{s^2}$
+
+
+b. Using the data in Table 2.4, plot $d_b$ in ft versus $v^2/2$ in $ft^2/sec^2$ to estimate $\frac1k$ directly.
+
+```{r}
+db <- c(20, 28, 40.5, 52.5, 72, 92.4, 118, 148.5, 182, 220.5, 266, 318, 376)
+v <- c(29.33, 36.667, 44, 51.33, 58.667, 66, 73.33, 80.667, 88, 95.333, 102.667, 110.0, 117.3)
+
+ggplot(data.frame(x=v, y=db), aes(x=x, y=y)) + 
+geom_smooth(method = 'lm') +
+geom_point(size=3) + 
+xlab("V(ft per sec)") + 
+ylab("db")
+```
+
+
+
+
