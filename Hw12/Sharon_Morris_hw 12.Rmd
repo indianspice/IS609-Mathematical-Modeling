@@ -1,0 +1,76 @@
+---
+title: 'Week 12: Optimization of continuous models, nonlinear programming (NLP)'
+author: "Sharon Morris"
+date: "11/2/2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+##Page 576: #2
+Consider a company that allows backordering.That is,the company notifies customers that a temporary stock-out exists and that their order will be filled shortly. What con- ditions might argue for such a policy? What effect does such a policy have on storage costs? Should costs be assigned to stock-outs? Why? How would you make such an as- signment? What assumptions are implied by the model in Figure 13.7? Suppose a ‘‘loss of goodwill cost’’ of w dollars per unit per day is assigned to each stock-out. Compute the optimal order quantity $Q*$ and interpret your model.
+
+Since the company has a process fo back-ordering and customers have to wait for products that they want to be order, it is possible that the company may lose customers would would like to have the product the ordered immediately. The company would benefit by modifying its stock on site policy. It is possible that the company could have a supply chain that is close to their locations which will reduce storage costs while making sure customers are satisified. 
+
+The model in Figure 13.7 assumes that inventory can run out and inventory is reordered when customers order products that are not in stock. The model assumes order amounts are fixed. From the slopes it appears the quantity of orders are steady. Since order histories are steady it is easier to predict stock quantities and will make it easier to determine the amount to keep in stock.
+
+Order cycle $t=t_1+t_2$ <br>
+$d=$delivery cost <br>
+$s=$storage cost <br>
+$p=$ time items are in inventory <br>
+$r=$ demand
+$$ct=d+s\frac{Q}{2}t_i+wt_b$$ <br>
+$c=\frac{d}t +\frac{srpt^2}{2t}+\frac{w(1-p)t}{t}=\frac{d}{t}+\frac{srtp}{2}+w+wp$ <br>
+
+Diffrentiate 
+$c^1=-\frac{d}{t^2}+\frac{srp}{2}=0\rightarrow T^*=\sqrt \frac{2d}{srp}$ <br>
+$Q^*=rT^*=\sqrt \frac{2dr}{sp}$ <br>
+
+## Page 585: #2
+Find the local minimum value of the function
+$$f(x,y)=3x^2+6xy+7y^2-2x+4y$$ <br>
+$f^{''}$ at point $(x,y)$ <br>
+$\frac{\eth f}{\eth x}=6x+6y-2$ <br>
+$\frac{\eth f}{\eth y}=6x+14y+14$ <br>
+
+Partial derivatives
+$6x+6y-2=0,\space 6x+6y=2$ <br>
+$6x+14y+4=0,\space 6x+14y=-4$<br>
+$-8y-6=0$<br>
+$y=\frac{-3}{4}$<br>
+$6x+6(\frac{-3}{4})-2=0$<br>
+$x=\frac{13}{12}$<br>
+
+$f^{'}(\frac{13}{12},\frac{-3}{4})=0$ and 
+$f^{''}(\frac{13}{12},\frac{-3}{4}) > 0$ <br>
+
+$f$ attains minimum at $(\frac{13}{12},-\frac{3}{4})$ <br>
+$f=f(\frac{13}{12},\frac{-3}{4})=\frac{3*169}{144}-\frac{9*13}{24}+\frac{9*7}{16}-\frac{13}{6}-3$ <br>
+$=-2.58333$ <br>
+
+Local minimum value is $f=-2.58333$
+
+## Page 591: #5
+Find the hottest point$(x,y,z)$ along the elliptical orbit
+$$4x^2+y^2+4z^2=16$$<br>
+
+where the temperature function is
+
+$$T(x,y,z)=8x^2+4yz-16z+600$$
+
+$L(x,y,z,\lambda)=8x^2+4yz-16z+600-\lambda [4x^2+y^2+4z^2-16]$<br>
+$\frac{\eth L}{\eth x}=16x-8\lambda x=0$ <br>
+$\frac{\eth L}{\eth y}=4z-2\lambda y=0$ <br>
+$\frac{\eth L}{\eth z}=4y-8\lambda z-16=0$ <br>
+$\frac{\eth L}{\eth \lambda}=-4x^2-y^2-4z^2+16=0$ <br>
+
+Substituting into equation 3
+$4y-8\lambda z-16=0$ <br>
+$4z-16z-16=0$ <br>
+$y=z=-\frac {4}{3}$ <br>
+
+Substituting into equation 4
+$-4x^2-y^2-4z^2+16=0$ <br>
+$-4x^2 -\frac{16}{9}-4$ x $\frac{16}{9}+16=0$ <br>
+$x=\pm\frac{4}3$ <br>
+
+The point on the orbit with the hottest temperature are $(4/3, -4/3, -4/s)$ and $(-4/3, -4/3, -4/3)$
