@@ -1,0 +1,129 @@
+---
+title: 'Week 11: Modeling with systems of differential equations'
+author: "Sharon Morris"
+date: "10/26/2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+## Page 529: 
+1)Verify that the given function pair is a solution to the first-order system. 
+$x=-e^t$, $y=e^t$ \newline
+$\frac{dx}{dt}=-y$, $\frac{dy}{dt}=-x$ \newline
+
+$\frac{dx}{dt}=-e^t$ \newline
+$\frac{dx}{dt}=-y$ \newline
+$y=e^t$ \newline
+
+$\frac{dy}{dt}=e^t$ \newline
+$\frac{dy}{dt}=-x$ \newline
+$x=-e^t$ \newline
+
+$x=-e^t$, $y=e^t$ is a solution to the fist order system <br> $\frac{dx}{dt}=-y,\frac{dy}{dt}=-x$ 
+
+6) $\frac{dx}{dt} = -(y-1)$, $\frac{dy}{dt}=x-2$ <br>
+
+First derivative of the function:
+$x=\frac{dx}{dt}$, $y=\frac{dy}{dt}$ <br>
+
+Rest point of the autonomous system
+$\frac{dx}{dt}=0$, $\frac{dy}{dt}=0$ <br>
+$-(y-1)=0$ <br>
+$y=1$ <br>
+$x-2=0$ <br>
+$x=2$
+The rest point of the autonomous system is (2,1)
+
+## Page 536: #7
+Show that the two trajectories leading to $(m/n, a/b)$ shown in Figure 12.8 are unique.
+
+a. From system (12.6) derive the following equation: <br>
+
+$$\frac{dy}{dx}=\frac{(m-nx)y}{(a-by)x}$$ <br>
+$\frac{dt}{dx}=(\frac{dx}{dt})^-1=\frac{1}{(a-by)x}$ <br>
+$\frac{dy}{dx}=\frac{dy}{dt}$x$\frac{dt}{dx}=\frac{(m-nx)y}{(a-by)x}$ <br>
+
+b. Separate variables, integrate, and exponentiate to obtain
+$$y^ae^{-by}=Kx^me^-nx$$ <br>
+$\frac{(a-by)}{y}dy=\frac{(m-nx)}{x}dx$ <br>
+$\int \frac{(a-by)}{y}dy=\int \frac{m-mx}{x}dx$ <br>
+$\int (\frac{(a)}{y}-b)dy=\int(\frac{m}{x}-n)dx$ <br>
+$a$ln$|y|-by=m$ln$|x|-nx+k_1$ <br>
+ln$\frac{|y|^a}{|x|^b}=by-nx+k_1$ <br>
+$\frac{y^a}{x^b}=e^{by-mx+k_1}$ <br>
+$y^ae^{-by}=x^me^{-nx}e^{k_1}$ <br>
+$y^ae{-by}=Kx^me^{-nx}$ <br>
+
+c. Let $f(y)=y^a/e^{by}$ and $g(x)=x^m/e^{nx}$. Show that $f(y)$ has a unique maximum of $M_y=(a/eb)^a$ when $y=a/b$ as shown in Figure 12.12. Similarly, show that $g(x)$ has a unique maximum $M_x=(x/en)^m$ when $x=m/n$
+
+$f^1 = 0$ to find the maxima <br>
+$\frac{df(y)}{dy}=\frac{d\frac{y^a}{e^{by}}}{dy}$ <br>
+$\frac{e^{by}ay^{a-1}-y^abe^{by}}{e^{2by}}=0$ <br>
+$e^{by}y^{a-1}(a-yb)=0$ <br>
+$y=\frac{a}{b}$ or $y=0$ <br>
+
+$\frac{d^2f(y)}{dy^2}=\frac{d\frac{ay^{a-1}-y^ab}{e^{by}}}{dy}$ <br>
+$\frac{e^{by}{a(a-1)y^{a-2}-ay^{a-1}}-(ay^{a-1}-y^q)be^{by}}{e^{2by}}$ <br>
+$\frac{d^2f(y)}{dy^2}=\frac{e^a(0-0)-(0-0)be^a}{e^{2a}}=0$ <br>
+
+$\frac{d^2f(y)}{dy^2}=\frac{(\frac{a}{b})^{a-2}x-a}{e^a}$ <br>
+
+Since a and b are positive constants, $f^{11}\le0$ <br>
+The calue of maximum is:
+$M_y=(\frac{a}{eb})^a$
+
+
+d. Consider what happens as $(x, y)$ approaches $(m/n/a/b)$ Take limits in part (b) as $x\rightarrow m/n$ and $y\rightarrow a/b$ to show that
+$$lim_{{y\rightarrow a/b}{x\rightarrow m/n}}  [(\frac{y^a}{e^{by}})(\frac{e^{nx}}{x^m})]$$ <br>
+or $M_y/M_x=K$ Thus, any solution trajectory that approaches $m/n/a/b$ must satisfy
+
+$$\frac{y^a}{e^{by}}=(\frac{M_y}{M_x}) (\frac{x^m}{e^{nx}})$$ <br>
+
+$lim_{y\rightarrow \frac{a}b}[y^ae^{-by}]=lim_{x\rightarrow \frac{m}{n}}K[x^me{-nx}]$ <br>
+$\frac{lim_{y\rightarrow\frac{a}b}[y^ae^{-by}]}{lim_x\rightarrow[x^me{-nx}]}=K$ <br>
+$lim_{y\rightarrow \frac{a}b}[y^ae^{-by}]\{lim_{x\rightarrow \frac{m}n}[x^me^{-nx}]\}^{-1}=K$ <br>
+$lim_{y\rightarrow \frac{a}b}[y^ae^{-by}]lim_{x\rightarrow \frac{m}n[x^{-m}e^{nx}]=K}$ <br>
+$lim_{y\rightarrow \frac{m}n}lim_{y\rightarrow \frac{a}b}([y^ae^{-by}][x^{-m}e^{nx}])=K$ <br>
+$lim_{y\rightarrow \frac{a}b\ _x\rightarrow \frac{m}n}([y^ae^{-by}][x^{-m}e^{nx}])=K$ <br>
+$(\frac{a}{eb})^a(\frac{en}{x})^m=K$, $\frac{M_y}{m_x}=K$ <br>
+
+$(\frac{y^a}e^{by})=(\frac{M_y}M_x)(\frac{x^m}{e^{nx}})$ <br>
+
+f. Use a similar argument to show that the solution trajectory leading to $(m/n, a/b)$ is unique if $y_0 > a/b$.
+
+The funcation is decreaasing in the range <br>
+$(\frac{a}{b},\infty),f(y_0) < M_y$ <br>
+
+This implies:
+$\frac{M_y}{M_x}(\frac{x^m}{e^{nx}})=\frac{y_0^a}{e^{by_0}} < M_y$ <br>
+$\frac{M_y}{M_x}\frac{x^m}{e^{nx}} \lt M_y$ <br>
+Impiles $\frac{x^m}{e^{nx}} \lt M$
+
+##Page 546: #1
+Apply the first and second derivative tests to the function $f(y)=y^a/e^{by}$ to show that $y=a/b$ is a unique critical point that yields the relative maximum $f(a/b)$. Show also that $f(y)$ approaches zero as $y$ tends to infinity.
+
+Set $f^1=0$ to find the maximum
+$e^{by}y^{a-1}(a-yb)=0$ <br>
+$y=\frac{a}b\space or\space y=0$
+
+Second derivative test
+$f^{11}=\frac{e^{by}\left\{a(a-1)y^{a-2}-ay^{a-1}\right\}-(ay^{a-1}-y^a)be^{by}}{e^{2by}}$ <br>
+$\frac{e^a\left\{0-0\right\}-(0-0)be^{by}}{e^{2a}}=0$ <br>
+$\frac{(\frac{a}{b})^{a-2}x-a}{e^a}$ <br>
+
+Since $a$ and $b$ are positive, $f^{11}\lt0$, $y=\frac{a}b$ is a unique critical point and relative maximum = $M_y=(\frac{a}{eb})^a$ <br>
+
+Limit
+The limit $lim_{y\rightarrow\infty\frac{y^a}{e^{by}}}$ approaches zero does ot satisfy a useful limit.
+
+Apply the LaHopitalas rule
+$lim_{y\rightarrow\infty}\frac{ay^{a-1}}{be^{by}}$ <br>
+$lim_{y\rightarrow\infty}\frac{a!}{b^{a+1}e^{b(\infty)}}$ <br>
+$\frac{a!}{b^{a+1}(\infty)}=0$ <br>
+
+Proves that as $y\rightarrow \infty \space f(y)\rightarrow0$ 
+
+
+
+
